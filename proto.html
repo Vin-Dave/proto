@@ -7,6 +7,7 @@
 
     <title>Document</title>
     <script>
+      //przysłanianie pól
       function AddUser(name) {
         this.name = name;
       }
@@ -52,8 +53,60 @@
           console.log(`${property}`);
         }
       }
+      //instancje obiektu a prototyp
+
+      function Car(weight, model, year) {
+        this.weight = weight;
+        this.model = model;
+        this.year = year;
+        this.showModel1 = function () {
+          console.log(this.model, this.year);
+        };
+      }
+      Car.prototype.showModel = function () {
+        console.log(this.weight);
+      };
+
+      Car.prototype.nowe = 22;
+      let mustang = new Car("xyz", "zxy", 2023);
+      mustang.showModel();
+
+      Car.prototype = { weight: 222 };
+      Car.constructor.prototype = Car;
+      let idea = new Car("aaa", "bbb", "ccc");
+
+      //tworzenie nowego łańcucha prototypu
+
+      function Meta(name, userName) {
+        this.name = name;
+        this.userName = userName;
+        console.log(`konstruktor Meta ${this.name}, ${this.userName}`);
+      }
+
+      function MetaTest(test1) {
+        this.test1 = test1;
+        this.readMetaTest = function () {
+          console.log(`to jest konstruktor MetaTest ${test1}`);
+        };
+      }
+
+      function MetaTest2(test2, x, y) {
+        this.test2 = test2;
+        this.x = x;
+        this.y = y;
+        this.readMetaTest2 = function () {
+          console.log(`to jest konstruktor MetaTest2 ${test2}`);
+        };
+      }
+      MetaTest.prototype = new Meta();
+      MetaTest2.prototype = new MetaTest();
+
+      let newMeta1 = new Meta("obj", "objTest");
+      let newMeta = new MetaTest2("test2", 120, 120);
+      MetaTest.prototype.constructor = MetaTest;
+      MetaTest2.prototype.constructor = MetaTest2;
     </script>
   </head>
 
-  <body style="background-color: rgb(92, 151, 151)" ;></body>
+  <body style="background-color: rgb(92, 151, 151)"></body>
 </html>
