@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=<1.0>" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Car(model, year, subscrition) {
+        this.model = model;
+        this.year = year;
+        this.subscrition = subscrition;
+
+        this.showModel = function () {
+          console.log(this.model, this, year, this.subscrition);
+        };
+      }
+      Car.prototype.modelCar = function () {
+        return [this.model, this.year, this.subscrition];
+      };
+
+      function Ford(model, year, subscrition, type) {
+        Car.call(this, model, year, subscrition);
+        this.type = type;
+        this.fordModel = function () {
+          console.log(this.type);
+        };
+      }
+      Ford.prototype = new Car();
+      Ford.prototype.constructor = Ford;
+      let car1 = new Car("mustang ");
+      let car2 = new Ford("mustang1");
+
+      function Bot(name, year) {
+        this.name = name;
+        this.year = year;
+        this.showBot = function () {
+          console.log(this.name, this.year);
+        };
+      }
+      Bot.prototype.botModel = function () {
+        return [this.name, this.year];
+      };
+
+      function Bot1(name, year, subscrition, car) {
+        Bot.call(this, name, year);
+        this.subscrition = subscrition;
+        this.car = car;
+
+        this.showBot2 = function () {
+          return [this.name, this.year, this.subscrition, this.car];
+        };
+      }
+
+      Bot1.prototype = new Bot();
+      Bot1.prototype.constructor = Bot1;
+
+      let testBot = new Bot1("Harry", 12, true, true);
+    </script>
+  </body>
+</html>
