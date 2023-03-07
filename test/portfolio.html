@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kalkulator walutowy</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kalkulator walutowy</h1>
+    </header>
+    <main>
+      <form>
+        <div class="form-group">
+          <label for="amount">Kwota:</label>
+          <input type="number" id="amount" name="amount" required />
+        </div>
+        <div class="form-group">
+          <label for="from">Z:</label>
+          <select id="from" name="from" required>
+            <option value="EUR">Euro</option>
+            <option value="USD">Dolar amerykański</option>
+            <option value="GBP">Funt brytyjski</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="to">Na:</label>
+          <select id="to" name="to" required>
+            <option value="EUR">Euro</option>
+            <option value="USD">Dolar amerykański</option>
+            <option value="GBP">Funt brytyjski</option>
+          </select>
+        </div>
+        <button type="button" id="convert">Przelicz</button>
+      </form>
+      <div id="result"></div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
