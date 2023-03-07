@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Product(name, price, category, description) {
+        this.name = name;
+        this.price = price;
+        this.category = category;
+        this.description = description;
+      }
+
+      Product.prototype.addToCart = function () {
+        console.log(`Produkt ${this.name} został dodany do koszyka.`);
+      };
+
+      Product.prototype.showDetails = function () {
+        console.log(`Nazwa: ${this.name}`);
+        console.log(`Cena: ${this.price}`);
+        console.log(`Kategoria: ${this.category}`);
+        console.log(`Opis: ${this.description}`);
+      };
+
+      // Tworzenie nowych obiektów produktu
+      const product1 = new Product(
+        "Książka 'Władca pierścieni'",
+        219.99,
+        "Książki",
+        "fantastyka"
+      );
+      const product2 = new Product("abc", 4499.99, "AI.");
+
+      product1.addToCart();
+      product2.showDetails();
+    </script>
+  </body>
+</html>
