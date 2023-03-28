@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .text-content {
+        border: 2px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+        dolorum ipsum at incidunt? Earum doloremque, nam unde placeat,
+        blanditiis soluta voluptatem cumque similique accusantium necessitatibus
+        dolore vitae debitis magnam eligendi!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+        dolorum ipsum at incidunt? Earum doloremque, nam unde placeat,
+        blanditiis soluta voluptatem cumque similique accusantium necessitatibus
+        dolore vitae debitis magnam eligendi!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+        dolorum ipsum at incidunt? Earum doloremque, nam unde placeat,
+        blanditiis soluta voluptatem cumque similique accusantium necessitatibus
+        dolore vitae debitis magnam eligendi!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+        dolorum ipsum at incidunt? Earum doloremque, nam unde placeat,
+        blanditiis soluta voluptatem cumque similique accusantium necessitatibus
+        dolore vitae debitis magnam eligendi! Ea beatae nisi accusamus ullam.
+        Rerum, consequuntur fuga! Quidem provident, vero architecto sit illum
+        nesciunt, possimus repudiandae sint consequuntur voluptatibus eligendi
+        excepturi placeat eum sunt dicta rerum ipsum magnam quam. Eius quidem ex
+        nulla, ipsam fuga accusantium vel itaque, cum tempora totam laboriosam
+        optio ab at dignissimos nam aperiam exercitationem delectus inventore
+        aliquam repellendus, consectetur minus suscipit quo. Ratione, porro.
+        Quae quibusdam voluptates expedita reiciendis illum! Repellendus
+        laboriosam voluptatibus, dignissimos est sit nobis error quos? Eos
+        asperiores qui aspernatur corporis similique rem quod, eius in tempora
+        distinctio libero consequatur dolorem.
+      </p>
+    </div>
+
+    <script>
+      const list = document.getElementsByTagName("p");
+
+      for (let i = 0; i < list.length; i++) {
+        const p = list[i];
+        p.classList.add("text-content");
+        p.innerHTML += " " + i;
+      }
+
+      const c = document.getElementById("content");
+      c.style.background = "red";
+      /*
+        
+        const list = document.getElementsByTagName("p");
+      for (let p of list) {
+        p.classList.add("text-content");
+        p.innerHTML += " " + list[p];
+      }
+        */
+    </script>
+  </body>
+</html>
